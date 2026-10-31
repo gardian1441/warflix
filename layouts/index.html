@@ -1,0 +1,41 @@
+{{ define "main" }}
+
+<section class="hero">
+  {{ if partial "image-existe.html" "images/hero.jpg" }}<img class="hero-bg" src="{{ "images/hero.jpg" | relURL }}" alt="">{{ end }}
+  <div class="hero-content">
+    <h1>Revivez les plus grandes batailles de l'Histoire</h1>
+    <p>{{ site.Params.description }}</p>
+    <a href="#periodes" class="btn">Explorer</a>
+  </div>
+</section>
+
+<section class="section" id="periodes">
+  <h2>Périodes historiques</h2>
+  <div class="grid">
+    {{ range site.Home.Sections.ByWeight }}
+      {{ partial "card.html" . }}
+    {{ end }}
+  </div>
+</section>
+
+{{/* Une rangée défilante par période, avec toutes ses batailles (sous-périodes comprises) */}}
+{{ range site.Home.Sections.ByWeight }}
+  {{ $batailles := (where .RegularPagesRecursive "Params.year" "!=" nil).ByParam "year" }}
+  {{ if $batailles }}
+  <section class="section section--row">
+    <div class="row-head">
+      <h2>{{ .Title }}</h2>
+      <a class="row-all" href="{{ .RelPermalink }}">Tout voir</a>
+    </div>
+    <div class="row-wrap">
+      <button type="button" class="row-btn row-btn--prev" aria-label="Précédent">‹</button>
+      <div class="row">
+        {{ range $batailles }}{{ partial "card.html" . }}{{ end }}
+      </div>
+      <button type="button" class="row-btn row-btn--next" aria-label="Suivant">›</button>
+    </div>
+  </section>
+  {{ end }}
+{{ end }}
+
+{{ end }}
