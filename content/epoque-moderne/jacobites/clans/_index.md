@@ -2,7 +2,7 @@
 title: "Les clans"
 description: "Mackenzie, MacDonald, Cameron, Campbell, Fraser : des chefs, des blasons, des choix qui n'ont pas toujours été les mêmes."
 periode: "Highlands, XVIIe – XVIIIe siècle"
-image: "/images/clans/logoclans.jpg"
+image: "images/clans/logoclans.jpg"
 weight: 1
 ---
 
