@@ -3,7 +3,7 @@ title: "Bataille de Killiecrankie"
 description: "En moins d'une heure, la charge des Highlanders balaie l'armée de Guillaume III, mais coûte la vie à leur chef."
 year: 1689
 periode: "27 juillet 1689"
-image: "/images/killiecrankie.jpg"
+image: "images/killiecrankie.jpg"
 lieu: "Passe de Killiecrankie, Perthshire (Écosse)"
 camps: "Jacobites (clans des Highlands et contingent irlandais) contre armée gouvernementale"
 commandants: "John Graham de Claverhouse, vicomte Dundee, contre Hugh Mackay de Scourie"
