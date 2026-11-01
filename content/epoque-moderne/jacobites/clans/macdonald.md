@@ -12,7 +12,7 @@ fiche:
   - {"label": "Devise", "valeur": "Per mare per terras (« Par mer et par terre »)"}
   - {"label": "Position", "valeur": "Majoritairement jacobites"}
 blason:
-  image: "/images/clans/macdonald.png"
+  image: "images/clans/macdonald.png"
   alt: "Blason du clan MacDonald"
   notes:
     -
