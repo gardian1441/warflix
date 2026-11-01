@@ -10,7 +10,7 @@ commandants: "Alexandre le Grand contre Darius III"
 issue: "Victoire décisive d'Alexandre"
 
 carte:
-  image: "/images/carte-gaugameles.jpg"
+  image: "images/carte-gaugameles.jpg"
   alt: "Carte des conquêtes d'Alexandre le Grand"
   legende: "Les grandes batailles de la conquête (334–326 av. J.-C.)"
   points:
