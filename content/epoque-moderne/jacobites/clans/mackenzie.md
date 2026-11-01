@@ -2,7 +2,7 @@
 title: "Clan Mackenzie"
 description: "Maîtres du nord-ouest des Highlands : un clan puissant, divisé en 1745."
 periode: "Kintail et Ross-shire"
-image: "/images/clans/mackenzie.png"
+image: "images/clans/mackenzie.png"
 image_style: "logo"
 weight: 1
 fiche:
