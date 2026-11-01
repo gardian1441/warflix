@@ -3,7 +3,7 @@ title: "Jacobites et clans écossais"
 description: "Des Highlands à Culloden : les soulèvements qui ont voulu rendre le trône aux Stuarts, et les clans qui les ont portés… ou combattus."
 periode: "1688 – 1746"
 weight: 1
-image: "/images/jacobites.jpg"
+image: "images/jacobites.jpg"
 frise:
   -
     quand: "1688"
