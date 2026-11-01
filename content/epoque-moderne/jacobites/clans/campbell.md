@@ -11,7 +11,7 @@ fiche:
   - {"label": "Devise", "valeur": "Ne obliviscaris (« N'oublie pas »)"}
   - {"label": "Position", "valeur": "Fidèles au gouvernement"}
 blason:
-  image: "/images/clans/campbell.png"
+  image: "images/clans/campbell.png"
   alt: "Blason du clan Campbell"
   notes:
     -
