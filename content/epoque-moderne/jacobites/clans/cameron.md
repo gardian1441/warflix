@@ -11,7 +11,7 @@ fiche:
   - {"label": "Devise", "valeur": "Aonaibh ri chèile (« Unissez-vous »)"}
   - {"label": "Position", "valeur": "Jacobites"}
 blason:
-  image: "/images/clans/cameron.png"
+  image: "images/clans/cameron.png"
   alt: "Blason du clan Cameron"
   notes:
     - {"x": 50, "y": 66, "cote": "droite", "titre": "La devise : Aonaibh ri chèile", "texte": "En gaélique : « Unissez-vous ». Un appel à rester solidaires derrière le chef."}
