@@ -2,7 +2,7 @@
 title: "Clan Cameron"
 description: "Les hommes de Lochiel : un clan fidèle aux Stuarts de Killiecrankie à Culloden."
 periode: "Lochaber"
-image: "/images/clans/cameron.png"
+image: "images/clans/cameron.png"
 image_style: "logo"
 weight: 3
 fiche:
