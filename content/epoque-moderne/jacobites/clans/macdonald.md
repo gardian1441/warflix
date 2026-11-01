@@ -2,7 +2,7 @@
 title: "Clan MacDonald"
 description: "Héritiers des Seigneurs des Îles : le plus vaste des clans, présent dans presque tous les soulèvements."
 periode: "Hébrides et Highlands de l'Ouest"
-image: "/images/clans/macdonald.png"
+image: "images/clans/macdonald.png"
 image_style: "logo"
 weight: 2
 fiche:
