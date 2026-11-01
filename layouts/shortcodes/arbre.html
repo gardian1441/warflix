@@ -1,0 +1,9 @@
+{{/* Arbre généalogique : front matter  arbre: [ {nom, dates, role, camp, enfants:[...]} ] */}}
+{{ with .Page.Params.arbre }}
+<div class="arbre" role="img" aria-label="Arbre généalogique des chefs du clan">
+  <ul>
+    {{ range . }}{{ partial "arbre-noeud.html" . }}{{ end }}
+  </ul>
+</div>
+<p class="arbre-legende"><span class="pastille pastille--jacobite"></span>jacobite <span class="pastille pastille--gouvernement"></span>fidèle au gouvernement <span class="pastille pastille--neutre"></span>autre ou non précisé</p>
+{{ end }}

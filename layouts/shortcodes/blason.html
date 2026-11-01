@@ -1,0 +1,25 @@
+{{/* Blason annoté avec des flèches : front matter  blason: {image, alt, notes:[{x, y, cote, titre, texte}]} */}}
+{{ with .Page.Params.blason }}
+<figure class="annote">
+  <div class="annote-grille">
+    <div class="annote-col annote-col--g">
+      {{ range $i, $n := .notes }}{{ if eq ($n.cote | default "droite") "gauche" }}
+        <button type="button" class="annote-note" data-i="{{ $i }}" data-titre="{{ $n.titre }}" data-texte="{{ $n.texte }}"><b>{{ add $i 1 }}</b> {{ $n.titre }}</button>
+      {{ end }}{{ end }}
+    </div>
+    <div class="annote-wrap">
+      <img src="{{ .image | relURL }}" alt="{{ .alt | default "Blason du clan" }}" loading="lazy">
+      {{ range $i, $n := .notes }}
+        <button type="button" class="annote-pt" data-i="{{ $i }}" data-titre="{{ $n.titre }}" data-texte="{{ $n.texte }}" style="left:{{ $n.x }}%;top:{{ $n.y }}%" aria-label="{{ $n.titre }}">{{ add $i 1 }}</button>
+      {{ end }}
+    </div>
+    <div class="annote-col annote-col--d">
+      {{ range $i, $n := .notes }}{{ if ne ($n.cote | default "droite") "gauche" }}
+        <button type="button" class="annote-note" data-i="{{ $i }}" data-titre="{{ $n.titre }}" data-texte="{{ $n.texte }}"><b>{{ add $i 1 }}</b> {{ $n.titre }}</button>
+      {{ end }}{{ end }}
+    </div>
+  </div>
+  <svg class="annote-lignes" aria-hidden="true"></svg>
+  <div class="annote-detail" aria-live="polite"><p class="carte-aide">Clique sur une flèche ou un numéro pour comprendre chaque élément.</p></div>
+</figure>
+{{ end }}

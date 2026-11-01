@@ -155,3 +155,202 @@ h1,h2,h3{font-family:var(--serif);line-height:1.15;font-weight:700}
 .card--logo:hover img{transform:scale(1.06);filter:none}
 .battle-hero--logo{min-height:44vh;background:radial-gradient(circle at 78% 30%,#262626,#0b0b0b 70%)}
 .hero-logo{height:120px;width:auto;max-width:200px;object-fit:contain;margin-bottom:16px}
+
+/* ===== LOGOS : ils remplissent le carré ===== */
+.grid--logos{grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
+.grid--logos .card--logo{aspect-ratio:1/1;min-height:0}
+.card--logo img{padding:10px 10px 46px}
+.card--logo .card-text{left:14px;right:14px;bottom:12px}
+.card--logo .card-text strong{font-size:1.15rem}
+
+/* Logo agrandi sur la page du clan */
+.battle-hero--logo{min-height:52vh}
+.hero-logo{position:absolute;right:var(--pad);top:52%;transform:translateY(-50%);width:clamp(200px,30vw,420px);height:auto;max-height:78%;object-fit:contain;z-index:0;filter:drop-shadow(0 8px 24px rgba(0,0,0,.55))}
+.battle-hero--logo .battle-hero-text{position:relative;z-index:1;max-width:58%}
+
+/* ===== FORCES EN PRÉSENCE ===== */
+.forces{margin:0 0 2.6rem}
+.forces h2{font-size:1.6rem;margin-bottom:16px}
+.forces-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.force{background:var(--panel);border-radius:var(--radius);padding:20px;border-top:4px solid #666}
+.force--jac{border-top-color:#d93636}
+.force--gouv{border-top-color:#3c78c4}
+.force--esp{border-top-color:#d19a2a}
+.force h3{font-size:1.25rem;margin-bottom:6px}
+.force-nb{font-size:1.5rem;font-weight:700;font-family:var(--serif)}
+.force-barre{height:10px;background:#262626;border-radius:6px;overflow:hidden;margin:10px 0 14px}
+.force-barre span{display:block;height:100%;border-radius:6px;background:#888}
+.force--jac .force-barre span{background:#d93636}
+.force--gouv .force-barre span{background:#3c78c4}
+.force--esp .force-barre span{background:#d19a2a}
+.force dt{color:var(--muted);font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;margin-top:10px}
+.force dd{font-size:.98rem}
+.forces-note{margin-top:12px;font-size:.85rem;color:var(--muted)}
+
+/* ===== SOURCES ===== */
+.sources{margin-top:3rem;padding:18px 22px;background:var(--panel);border-radius:var(--radius)}
+.sources h2{font-size:1.1rem;margin-bottom:8px}
+.sources li{margin:4px 0 4px 1.1rem;font-size:.95rem}
+.sources a{color:var(--accent);text-decoration:underline}
+
+/* ===== PLAN DE BATAILLE INTERACTIF ===== */
+.plan{margin:2.4rem 0;padding:20px;background:var(--panel);border-radius:var(--radius)}
+.plan-entete{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}
+.plan-entete h3{font-size:1.25rem;margin:0}
+.plan-legende{display:flex;gap:16px;font-size:.85rem;color:var(--muted)}
+.lg::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.lg--jac::before{background:#d93636}
+.lg--gouv::before{background:#3c78c4}
+.plan-scroll{overflow-x:auto;border-radius:12px}
+.plan-canvas{position:relative;aspect-ratio:16/9;min-width:560px;border-radius:12px;background:linear-gradient(#1b1f19,#14170f);background-image:repeating-linear-gradient(0deg,rgba(255,255,255,.03) 0 1px,transparent 1px 44px),repeating-linear-gradient(90deg,rgba(255,255,255,.03) 0 1px,transparent 1px 44px),linear-gradient(#1b1f19,#14170f)}
+.plan-unit{position:absolute;display:grid;place-items:center;padding:2px;border-radius:6px;border:1.5px solid rgba(255,255,255,.5);font:600 clamp(.46rem,.95vw,.7rem)/1.05 var(--sans);color:#fff;text-align:center;cursor:pointer;overflow:hidden;z-index:2;transition:left .9s ease,top .9s ease,width .9s ease,height .9s ease,opacity .5s,filter .5s}
+.plan-unit--jac{background:#b32626}
+.plan-unit--gouv{background:#2f62a8}
+.plan-unit--esp{background:#b5811f}
+.plan-unit.absent{opacity:0;pointer-events:none}
+.plan-unit.battu{filter:grayscale(.7) brightness(.7)}
+.plan-unit:hover,.plan-unit.actif{border-color:#fff;box-shadow:0 0 0 2px var(--accent)}
+.plan-decor{position:absolute;display:grid;place-items:center;border-radius:6px;font-size:.62rem;color:rgba(255,255,255,.55);text-align:center;pointer-events:none;z-index:1}
+.plan-decor--mur{background:#6b5b45}
+.plan-decor--marais{background:rgba(70,110,90,.35);border:1px dashed rgba(120,170,140,.55)}
+.plan-decor--mer{background:rgba(50,90,140,.4)}
+.plan-decor--relief{background:rgba(120,100,70,.28)}
+.plan-fleches{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:3}
+.plan-fleches line{stroke-width:.7;stroke-linecap:round;animation:apparait .6s ease both}
+@keyframes apparait{from{opacity:0}to{opacity:1}}
+.plan-commandes{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:14px}
+.plan-commandes button{padding:8px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);color:var(--text);font:600 .9rem var(--sans);cursor:pointer;transition:border-color .2s,background .2s}
+.plan-commandes button:hover:not(:disabled){border-color:var(--accent)}
+.plan-commandes button:disabled{opacity:.35;cursor:default}
+.plan-puces{display:flex;flex:1;flex-wrap:wrap;justify-content:center;gap:6px}
+.plan-puces button{width:38px;height:38px;padding:0;border-radius:50%}
+.plan-puces button.actif{background:var(--accent);border-color:var(--accent)}
+.plan-panneau{margin-top:14px;padding:16px 18px;min-height:120px;background:#101010;border-left:4px solid var(--accent);border-radius:12px}
+.plan-quand{color:var(--accent);font-weight:600;font-size:.9rem}
+.plan-titre{font-family:var(--serif);font-size:1.2rem;margin:2px 0 6px}
+.plan-detail,.plan-note{margin-top:10px;font-size:.88rem;color:var(--muted)}
+.plan-fallback{margin:12px 0 0 1.2rem;color:var(--muted)}
+.js .plan-fallback{display:none}
+
+/* ===== ARBRE GÉNÉALOGIQUE ===== */
+.arbre{overflow-x:auto;margin:2rem 0 .4rem;padding:8px 4px 20px}
+.arbre ul{display:flex;justify-content:center;position:relative;margin:0;padding:22px 0 0;list-style:none}
+.arbre>ul{width:max-content;min-width:100%;padding-top:0}
+.arbre li{position:relative;display:flex;flex-direction:column;align-items:center;padding:22px 8px 0;text-align:center}
+.arbre li::before,.arbre li::after{content:"";position:absolute;top:0;right:50%;width:50%;height:22px;border-top:2px solid #4a4a4a}
+.arbre li::after{right:auto;left:50%;border-left:2px solid #4a4a4a}
+.arbre li:only-child::before,.arbre li:only-child::after{display:none}
+.arbre li:only-child{padding-top:22px}
+.arbre li:first-child::before,.arbre li:last-child::after{border:0 none}
+.arbre li:last-child::before{border-right:2px solid #4a4a4a;border-radius:0 8px 0 0}
+.arbre li:first-child::after{border-radius:8px 0 0 0}
+.arbre ul ul::before{content:"";position:absolute;top:0;left:50%;height:22px;border-left:2px solid #4a4a4a}
+.arbre>ul>li{padding-top:0}
+.arbre>ul>li::before,.arbre>ul>li::after{display:none}
+.noeud{min-width:140px;max-width:190px;padding:10px 12px;background:var(--panel);border:1px solid #333;border-left:4px solid #777;border-radius:10px}
+.noeud strong{display:block;font-family:var(--serif);font-size:.98rem;line-height:1.2}
+.noeud small{display:block;color:var(--muted);font-size:.78rem;margin-top:2px}
+.noeud span{display:block;color:#cfcac0;font-size:.8rem;margin-top:4px;line-height:1.3}
+.noeud--jacobite{border-left-color:#d93636}
+.noeud--gouvernement{border-left-color:#3c78c4}
+.arbre-legende{font-size:.82rem;color:var(--muted);margin-bottom:1.6rem}
+.pastille{display:inline-block;width:12px;height:12px;border-radius:3px;margin:0 6px 0 14px;vertical-align:-1px;background:#777}
+.pastille:first-child{margin-left:0}
+.pastille--jacobite{background:#d93636}
+.pastille--gouvernement{background:#3c78c4}
+
+/* ===== BLASON ANNOTÉ (flèches) ===== */
+.annote{position:relative;margin:2.2rem 0}
+.annote-grille{display:grid;grid-template-columns:1fr minmax(220px,380px) 1fr;gap:34px;align-items:center}
+.annote-col{display:flex;flex-direction:column;gap:20px}
+.annote-col--g{align-items:flex-end;text-align:right}
+.annote-col--d{align-items:flex-start}
+.annote-note{position:relative;z-index:2;padding:10px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.18);background:var(--panel);color:var(--text);font:600 .92rem var(--sans);cursor:pointer;transition:border-color .2s,background .2s}
+.annote-note b{color:var(--accent);margin-right:6px}
+.annote-note:hover,.annote-note.actif{border-color:var(--accent);background:rgba(255,42,42,.14)}
+.annote-wrap{position:relative;aspect-ratio:1/1;padding:12px;border-radius:var(--radius);background:radial-gradient(circle at 50% 40%,#2a2a2a,#111)}
+.annote-wrap img{width:100%;height:100%;object-fit:contain}
+.annote-pt{position:absolute;z-index:2;width:28px;height:28px;border-radius:50%;border:2px solid #fff;background:var(--accent);color:#fff;font:700 .82rem var(--sans);cursor:pointer;transform:translate(-50%,-50%)}
+.annote-pt.actif{background:#fff;color:var(--accent)}
+.annote-lignes{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible;z-index:1}
+.annote-lignes line{stroke:var(--accent);stroke-width:1.6;opacity:.9}
+.annote-detail{margin-top:18px;min-height:92px;padding:18px 22px;background:var(--panel);border-radius:var(--radius);border-left:4px solid var(--accent)}
+.annote-detail h3{font-size:1.15rem;margin-bottom:6px}
+
+/* ===== MOBILE (aucun effet sur ordinateur) ===== */
+@media (max-width:700px){
+  html{-webkit-text-size-adjust:100%}
+  :root{--pad:18px}
+  .logo{font-size:1.25rem}
+  .hero{min-height:76vh}
+  .hero h1{font-size:2.1rem}
+  .hero p{font-size:1.05rem}
+  .section{padding:44px var(--pad) 10px}
+  .section h2{font-size:1.5rem;margin-bottom:16px}
+  .grid{grid-template-columns:1fr;gap:16px}
+  .grid--logos{grid-template-columns:repeat(2,1fr);gap:12px}
+  .card{min-height:190px}
+  .card-text strong{font-size:1.3rem}
+  .row .card{flex:0 0 78%;max-width:300px}
+  .battle-hero{min-height:50vh;padding-bottom:28px}
+  .battle-hero--logo{min-height:0;padding-top:130px}
+  .hero-logo{position:static;transform:none;width:170px;max-height:none;margin:0 0 12px}
+  .battle-hero--logo .battle-hero-text{max-width:100%}
+  .battle-hero h1{font-size:1.9rem}
+  .lead{font-size:1.02rem}
+  .battle-content{padding:12px var(--pad) 30px}
+  .battle-info{grid-template-columns:1fr 1fr;gap:10px}
+  .info-card{padding:14px}
+  .prose{font-size:1.02rem;line-height:1.7}
+  .prose h2{font-size:1.45rem}
+  .forces-grille{grid-template-columns:1fr}
+  .force-nb{font-size:1.3rem}
+  .carte-point{width:30px;height:30px}
+  .carte-info,.annote-detail{min-height:0;padding:14px 16px}
+  .plan{padding:14px}
+  .plan-commandes{gap:8px}
+  .plan-puces{order:3;flex-basis:100%}
+  .plan-panneau{min-height:0}
+  .annote-grille{grid-template-columns:1fr;gap:14px}
+  .annote-wrap{order:-1;max-width:320px;margin:0 auto;width:100%}
+  .annote-col--g,.annote-col--d{align-items:stretch;text-align:left}
+  .annote-note{text-align:left}
+  .noeud{min-width:120px;max-width:150px;padding:8px 10px}
+  .site-footer{padding:28px 18px;font-size:.85rem}
+}
+@media (max-width:380px){
+  .battle-info{grid-template-columns:1fr}
+  .hero h1{font-size:1.85rem}
+}
+
+/* ===== QUIZ ===== */
+.quiz{margin:2rem 0;padding:22px;background:var(--panel);border-radius:var(--radius)}
+.quiz-fallback{margin:0 0 0 1.2rem;color:var(--muted)}
+.js .quiz-fallback{display:none}
+.quiz-haut{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:.9rem;color:var(--muted);margin-bottom:10px}
+.quiz-barre{height:6px;background:#262626;border-radius:4px;overflow:hidden;margin-bottom:18px}
+.quiz-barre span{display:block;height:100%;background:var(--accent);transition:width .4s}
+.quiz-question{font-family:var(--serif);font-size:1.3rem;line-height:1.35;margin-bottom:16px}
+.quiz-options{display:grid;gap:10px}
+.quiz-option{display:flex;align-items:center;gap:12px;width:100%;padding:13px 16px;text-align:left;background:#101010;color:var(--text);border:1px solid rgba(255,255,255,.18);border-radius:12px;font:500 1rem var(--sans);cursor:pointer;transition:border-color .2s,background .2s}
+.quiz-option b{flex:none;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:#222;font-size:.85rem}
+.quiz-option:hover:not(:disabled){border-color:var(--accent);background:rgba(255,42,42,.1)}
+.quiz-option:disabled{cursor:default}
+.quiz-option.juste{border-color:#2e9e5b;background:rgba(46,158,91,.18)}
+.quiz-option.juste b{background:#2e9e5b}
+.quiz-option.faux{border-color:#d93636;background:rgba(217,54,54,.16)}
+.quiz-option.faux b{background:#d93636}
+.quiz-explication{margin-top:16px;padding:14px 16px;background:#101010;border-left:4px solid var(--accent);border-radius:10px;font-size:.98rem}
+.quiz-explication strong{display:block;margin-bottom:4px}
+.quiz-actions{display:flex;justify-content:flex-end;margin-top:16px}
+.quiz-btn{padding:10px 22px;border-radius:999px;border:1px solid var(--accent);background:var(--accent);color:#fff;font:700 .95rem var(--sans);cursor:pointer;transition:transform .2s,background .2s}
+.quiz-btn:hover{transform:scale(1.04);background:#ff4444}
+.quiz-score{text-align:center;padding:10px 0}
+.quiz-score .gros{font-family:var(--serif);font-size:3rem;font-weight:700;color:var(--accent);line-height:1}
+.quiz-score p{margin:10px 0 18px;color:var(--muted)}
+@media (max-width:700px){
+  .quiz{padding:16px}
+  .quiz-question{font-size:1.15rem}
+  .quiz-option{min-height:50px;padding:12px 14px}
+  .quiz-actions .quiz-btn,.quiz-score .quiz-btn{width:100%}
+}

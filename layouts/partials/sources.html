@@ -1,0 +1,8 @@
+{{ with .Params.sources }}
+<aside class="sources">
+  <h2>Sources et pour aller plus loin</h2>
+  <ul>
+    {{ range . }}<li><a href="{{ .url }}" target="_blank" rel="noopener">{{ .titre }}</a></li>{{ end }}
+  </ul>
+</aside>
+{{ end }}

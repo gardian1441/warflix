@@ -1,0 +1,9 @@
+{{/* Quiz : front matter  quiz: [ {q, options:[...], bonne:<index de la bonne réponse, à partir de 0>, explication} ] */}}
+{{ with .Page.Params.quiz }}
+<section class="quiz" data-quiz="{{ . | jsonify }}">
+  <div class="quiz-zone"></div>
+  <ol class="quiz-fallback">
+    {{ range . }}<li>{{ .q }} <em>Réponse : {{ index .options .bonne }}.</em> {{ .explication }}</li>{{ end }}
+  </ol>
+</section>
+{{ end }}

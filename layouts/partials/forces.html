@@ -1,0 +1,23 @@
+{{/* Bloc "Les forces en présence" : front matter  forces: [ {camp, cle, effectifs, effectifs_texte, chefs, composition, pertes} ] */}}
+{{ with .Params.forces }}
+{{ $max := 0 }}
+{{ range . }}{{ if gt (.effectifs | default 0) $max }}{{ $max = .effectifs }}{{ end }}{{ end }}
+<section class="forces">
+  <h2>Les forces en présence</h2>
+  <div class="forces-grille">
+    {{ range . }}
+    <div class="force force--{{ .cle | default "autre" }}">
+      <h3>{{ .camp }}</h3>
+      <p class="force-nb">{{ .effectifs_texte }}</p>
+      {{ if and .effectifs $max }}<div class="force-barre"><span style="width:{{ div (mul .effectifs 100) $max }}%"></span></div>{{ end }}
+      <dl>
+        {{ with .chefs }}<dt>Commandants</dt><dd>{{ . }}</dd>{{ end }}
+        {{ with .composition }}<dt>Composition</dt><dd>{{ . }}</dd>{{ end }}
+        {{ with .pertes }}<dt>Pertes</dt><dd>{{ . }}</dd>{{ end }}
+      </dl>
+    </div>
+    {{ end }}
+  </div>
+  <p class="forces-note">Les effectifs et les pertes des batailles anciennes sont des estimations : les sources divergent, et les barres comparent seulement les ordres de grandeur.</p>
+</section>
+{{ end }}

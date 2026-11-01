@@ -1,0 +1,12 @@
+<li>
+  <div class="noeud{{ with .camp }} noeud--{{ . }}{{ end }}">
+    <strong>{{ .nom }}</strong>
+    {{ with .dates }}<small>{{ . }}</small>{{ end }}
+    {{ with .role }}<span>{{ . }}</span>{{ end }}
+  </div>
+  {{ with .enfants }}
+  <ul>
+    {{ range . }}{{ partial "arbre-noeud.html" . }}{{ end }}
+  </ul>
+  {{ end }}
+</li>

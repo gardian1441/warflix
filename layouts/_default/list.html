@@ -13,7 +13,6 @@
 <section class="section">
   {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
 
-  {{/* Sous-sections (ex. dynasties, clans) */}}
   {{ $aDesSections := gt (len .Sections) 0 }}
   {{ with .Sections.ByWeight }}
     <div class="grid">
@@ -21,12 +20,13 @@
     </div>
   {{ end }}
 
-  {{/* Pages de cette section : triées par année si elles en ont, sinon par poids */}}
   {{ with .RegularPages }}
     {{ $pages := .ByWeight }}
     {{ if gt (len (where . "Params.year" "!=" nil)) 0 }}{{ $pages = .ByParam "year" }}{{ end }}
+    {{ $classe := "grid" }}
+    {{ with index . 0 }}{{ if eq (.Params.image_style | default "") "logo" }}{{ $classe = "grid grid--logos" }}{{ end }}{{ end }}
     {{ if $aDesSections }}<h2 class="liste-titre">Batailles majeures</h2>{{ end }}
-    <div class="grid">
+    <div class="{{ $classe }}">
       {{ range $pages }}{{ partial "card.html" . }}{{ end }}
     </div>
   {{ end }}

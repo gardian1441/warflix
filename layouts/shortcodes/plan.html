@@ -1,0 +1,30 @@
+{{/* Plan de bataille interactif : données dans le front matter (paramètre "plan") */}}
+{{ with .Page.Params.plan }}
+<section class="plan" data-plan="{{ . | jsonify }}">
+  <div class="plan-entete">
+    <h3>{{ .titre | default "Plan de la bataille" }}</h3>
+    <div class="plan-legende"><span class="lg lg--jac">Jacobites</span><span class="lg lg--gouv">Gouvernement</span></div>
+  </div>
+  <div class="plan-scroll">
+    <div class="plan-canvas">
+      <svg class="plan-fleches" viewBox="0 0 100 56.25" preserveAspectRatio="none" aria-hidden="true"></svg>
+    </div>
+  </div>
+  <div class="plan-commandes">
+    <button type="button" class="plan-prec">‹ Précédent</button>
+    <div class="plan-puces" role="group" aria-label="Phases de la bataille"></div>
+    <button type="button" class="plan-suiv">Suivant ›</button>
+    <button type="button" class="plan-auto">▶ Lecture</button>
+  </div>
+  <div class="plan-panneau" aria-live="polite">
+    <p class="plan-quand"></p>
+    <h4 class="plan-titre"></h4>
+    <p class="plan-texte"></p>
+  </div>
+  <p class="plan-detail">Clique sur une unité pour la détailler.</p>
+  {{ with .note }}<p class="plan-note">{{ . }}</p>{{ end }}
+  <ol class="plan-fallback">
+    {{ range .phases }}<li><strong>{{ .titre }}</strong> {{ .texte }}</li>{{ end }}
+  </ol>
+</section>
+{{ end }}
