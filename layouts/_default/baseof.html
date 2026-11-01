@@ -12,7 +12,7 @@
 <body>
 
 <header class="site-header">
-  <a href="{{ "/" | relURL }}" class="logo">⚔ WarFlix Historique</a>
+  <a href="{{ site.Home.RelPermalink }}" class="logo">⚔ WarFlix Historique</a>
   <nav class="nav" aria-label="Périodes">
     {{ range site.Home.Sections.ByWeight }}
       {{ $actif := or (eq $.RelPermalink .RelPermalink) ($.IsDescendant .) }}
