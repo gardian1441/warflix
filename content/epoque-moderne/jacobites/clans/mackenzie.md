@@ -11,7 +11,7 @@ fiche:
   - {"label": "Devise", "valeur": "Luceo non uro (« Je brille, je ne brûle pas »)"}
   - {"label": "En 1745", "valeur": "Clan divisé entre jacobites et gouvernement"}
 blason:
-  image: "/images/clans/mackenzie.png"
+  image: "images/clans/mackenzie.png"
   alt: "Blason du clan Mackenzie"
   notes:
     -
