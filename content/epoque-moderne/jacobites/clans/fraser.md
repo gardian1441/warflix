@@ -2,7 +2,7 @@
 title: "Clan Fraser de Lovat"
 description: "Lord Lovat, « le vieux renard », joue sur tous les tableaux, jusqu'à l'échafaud."
 periode: "Région d'Inverness"
-image: "/images/clans/fraser.png"
+image: "images/clans/fraser.png"
 image_style: "logo"
 weight: 5
 fiche:
