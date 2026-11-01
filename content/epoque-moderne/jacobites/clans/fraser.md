@@ -11,7 +11,7 @@ fiche:
   - {"label": "Devise", "valeur": "Je suis prest"}
   - {"label": "Position", "valeur": "Ambiguë, puis jacobites"}
 blason:
-  image: "/images/clans/fraser.png"
+  image: "images/clans/fraser.png"
   alt: "Blason du clan Fraser"
   notes:
     -
