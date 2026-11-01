@@ -3,7 +3,7 @@ title: "Bataille de Sheriffmuir"
 description: "Une bataille confuse et sans vainqueur, qui suffit pourtant à enterrer le soulèvement de 1715."
 year: 1715
 periode: "13 novembre 1715"
-image: "/images/sheriffmuir.jpg"
+image: "images/sheriffmuir.jpg"
 lieu: "Sheriffmuir, près de Dunblane (Écosse)"
 camps: "Jacobites contre armée gouvernementale"
 commandants: "John Erskine, comte de Mar, contre John Campbell, duc d'Argyll"
