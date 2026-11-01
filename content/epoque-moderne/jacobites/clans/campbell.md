@@ -2,7 +2,7 @@
 title: "Clan Campbell"
 description: "Le grand clan du gouvernement : les ducs d'Argyll, face aux clans jacobites de l'Ouest."
 periode: "Argyll"
-image: "/images/clans/campbell.png"
+image: "images/clans/campbell.png"
 image_style: "logo"
 weight: 4
 fiche:
